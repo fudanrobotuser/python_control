@@ -48,7 +48,7 @@ def main(args=None):
     
     while rclpy.ok():
         # Send positions A
-        joint_controller.send_trajectory_command(joint_controller.positions_A,10)
+        joint_controller.send_trajectory_command(joint_controller.positions_A,5)
 
         # Loop until all joints have arrived at positions A
         while rclpy.ok():
@@ -57,7 +57,7 @@ def main(args=None):
                 break
 
         # Send positions B
-        joint_controller.send_trajectory_command(joint_controller.positions_B,10)
+        joint_controller.send_trajectory_command(joint_controller.positions_B,5)
 
         # Loop until all joints have arrived at positions B
         while rclpy.ok():
