@@ -9,10 +9,13 @@ class JointController(Node):
         self.publisher = self.create_publisher(JointTrajectory, '/trajectory_controller/joint_trajectory', 10)
         self.subscription = self.create_subscription(JointState, '/joint_states', self.joint_states_callback, 10)
         
-        self.joint_names = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7']
+        self.joint_names = ['joint_01', 'joint_02', 'joint_03', 'joint_04', 'joint_05', 'joint_06', 'joint_07']
         self.positions_A = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]  # Position A for joints
-        # self.positions_B = [-10000000.0, 10000000.0, 1.0, 1.0, 1.0, 1.0, 1.0]
-        self.positions_B = [15000000.0, 10000000.0, 10000000.0, -10000000.0, 10000000.0, 10000000.0, 10000000.0]  # Position B for joints
+        self.positions_B = [10000000.0, 10000000.0, 10000000.0, -10000000.0, 10000000.0, 10000000.0, 10000000.0]
+
+        # self.joint_names = ['joint_01', 'joint_02', 'joint_03', 'joint_04', 'joint_05', 'joint_06', 'joint_07' , 'joint_08', 'joint_09', 'joint_10', 'joint_11', 'joint_12', 'joint_13', 'joint_14']
+        # self.positions_A = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]  # Position A for joints
+        # self.positions_B = [10000000.0, 10000000.0, 10000000.0, -10000000.0, 10000000.0, 10000000.0, 10000000.0, 10000000.0, 10000000.0, 10000000.0, -10000000.0, 10000000.0, 10000000.0, 10000000.0]  # Position B for joints
         # self.positions_C = [10000000.0, 10000000.0, 10000000.0, -10000000.0, 10000000.0, 10000000.0, 10000000.0]
 
 
@@ -52,7 +55,7 @@ def main(args=None):
     
     while rclpy.ok():
         # Send positions A
-        joint_controller.send_trajectory_command(joint_controller.positions_A,5)
+        joint_controller.send_trajectory_command(joint_controller.positions_A,20)
 
         # Loop until all joints have arrived at positions A
         while rclpy.ok():
@@ -61,7 +64,7 @@ def main(args=None):
                 break
 
         # Send positions B
-        joint_controller.send_trajectory_command(joint_controller.positions_B,5)
+        joint_controller.send_trajectory_command(joint_controller.positions_B,20)
 
         # Loop until all joints have arrived at positions B
         while rclpy.ok():
