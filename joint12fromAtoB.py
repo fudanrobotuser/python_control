@@ -13,12 +13,36 @@ class JointController(Node):
         # self.positions_A = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]  # Position A for joints
         # self.positions_B = [10000000.0, 10000000.0, 10000000.0, -10000000.0, 10000000.0, 10000000.0, 10000000.0]
 
-        self.joint_names = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7', 'joint_8', 'joint_9', 'joint_10', 'joint_11', 'joint_12', 'joint_13', 'joint_14']
-        self.positions_A = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]  # Position A for joints
-        self.positions_B = [10000000.0, 10000000.0, 10000000.0, -10000000.0, 10000000.0, 10000000.0, 10000000.0, 10000000.0, 10000000.0, 10000000.0, -10000000.0, 10000000.0, 10000000.0, 10000000.0]  # Position B for joints
+        self.joint_names = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7', 'joint_8', 'joint_9', 'joint_10', 'joint_11', 'joint_12']
+        self.positions_A = [27645.0
+,-317562.0
+,117513.0
+, -13985.0
+, -187979.0
+, -64669.0
+, 934.0
+, -8558.0
+, -266808.0
+, 251666.0
+, 138820.0
+, -26539.0
+]  # Position A for joints
+        self.positions_B = [27645.0
+,-317562.0
+,117513.0
+, -13985.0
+, -187979.0
+, -64669.0
+, 934.0
+, -8558.0
+, -266808.0
+, 251666.0
+, 0
+, 0
+]  # Position B for joints
         # self.positions_C = [10000000.0, 10000000.0, 10000000.0, -10000000.0, 10000000.0, 10000000.0, 10000000.0]
 
-        self.arrival_tolerance = 16880  # Tolerance for considering the joint as arrived
+        self.arrival_tolerance = 168800  # Tolerance for considering the joint as arrived
         self.is_arrived = {joint: False for joint in self.joint_names}
         self.target_positions = self.positions_A
 
